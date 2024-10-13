@@ -5,12 +5,19 @@
 
 ![cmd](src/main/resources/img/index.png)
 
-Чтобы его запустить, необходимо создать файл настроек
-`application.properties` в папке `resources`
+Чтобы его запустить, необходимо поменять файл настроек
+`application-prod.properties` в папке `resources`
 
-В целях безопасности этот файл добавлен в игнор-лист 
-индексации, поэтому на каждой локальной машине
-необходимо заполнять этот файл вручную.
+В основном файле настроек указывается только название сборки, в нашем
+случае - `prod`. Компилятор подружает файл настроект с 
+соответствующим постфиксом.
+
+
+логин и пароль
+- u1/q1
+- u2/q2
+- u3/q3
+
 
 Общий вид параметров по данным базы
 
@@ -50,8 +57,6 @@ spring.datasource.driverClassName=org.postgresql.Driver
 
 То файл параметров программы будет таким:
 
-<Tabs>
-<TabItem value="application-properties" label="application.properties">
 
 ```
 spring.datasource.url=jdbc:postgresql://test1.compute.amazonaws.com:5432/dbexqe3d
@@ -59,8 +64,25 @@ spring.datasource.username=bocxxsadfar
 spring.datasource.password=b12dd116c55986ce49bad37a40605f8833c38f9e0f28
 spring.datasource.driverClassName=org.postgresql.Driver
 ```
-</TabItem>
-</Tabs>
+
+### Idea
+
+В новой версии Idea, если создавать таблицы вручную, то для поля `id`
+нужно задать следующие параметры
+
+![cmd](src/main/resources/img/img.png)
+
+Также колонку `id` нужно сделать `primary key` и `unique key`
+
+
+### Бекап
+
+
+Для восстановления из базы данных из бекапа нужно использовать
+файл `dump.backup` или файл `dump.sql`.
+
+Первый файл - это сцеиализированный файл `postgres`. Из него точно 
+можно восстановить данные. Второй - `dump.sql`, сделал на всякий случай
 
 
 
